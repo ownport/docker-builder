@@ -15,3 +15,13 @@
 $ HTTP_PROXY=http://<docker-builder-host>:8118/
 ```
 
+## Examples
+
+To run docker-builder 
+
+```sh
+$ docker run -d --name 'docker-builder' \
+	-h docker-builder \
+	-v $(shell pwd):/var/www \
+	ownport/docker-builder:latest
+```
