@@ -1,0 +1,3 @@
+{ +redirect{s@http://dl-4.alpinelinux.org/alpine/@http://docker-builder/repo/alpine/@} }
+dl-4.alpinelinux.org/alpine/.*
+
