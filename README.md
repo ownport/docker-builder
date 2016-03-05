@@ -9,11 +9,21 @@
 - darkhttpd
 - privoxy
 
-## Settings
+## Confifuration
 
-```sh
-$ HTTP_PROXY=http://<docker-builder-host>:8118/
+### privoxy
+
+Rules
+
 ```
+{ +redirect{s@http://dl-4.alpinelinux.org/alpine/@http://docker-builder/repo/alpine/@} }
+dl-4.alpinelinux.org/alpine/.*
+```
+
+### DarkHTTPD
+
+Host directory is /var/www
+
 
 ## Examples
 
@@ -25,3 +35,13 @@ $ docker run -d --name 'docker-builder' \
 	-v $(shell pwd):/var/www \
 	ownport/docker-builder:latest
 ```
+
+to use docker-builder as forwaring proxy, please specify the HTTP_PROXY environment variable
+
+```sh
+$ HTTP_PROXY=http://<docker-builder-host>:8118/
+```
+
+HTTPS proxy is not supported
+
+
