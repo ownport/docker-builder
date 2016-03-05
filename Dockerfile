@@ -1,14 +1,9 @@
 FROM alpine:latest
 
-ARG DOCKER_BUILDER_HOST
+COPY ./scripts/install.sh /install/docker-builder.sh
 
-COPY ./scripts/runit.sh /install/
-COPY ./scripts/darkhttpd.sh /install/
-COPY ./scripts/privoxy.sh /install/
-
-RUN /install/runit.sh && \
-	RUNIT_SUPPORT=YES /install/darkhttpd.sh && \
-	RUNIT_SUPPORT=YES /install/privoxy.sh
+RUN /install/docker-builder.sh install_apps && \
+	/install/docker-builder.sh config_apps
 
 COPY ./conf/privoxy /etc/privoxy
 
