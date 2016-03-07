@@ -16,9 +16,16 @@
 Rules
 
 ```
-{ +redirect{s@http://dl-4.alpinelinux.org/alpine/@http://docker-builder/repo/alpine/@} }
-dl-4.alpinelinux.org/alpine/.*
+{ +redirect{s@http://dl-cdn.alpinelinux.org/alpine/@http://docker-builder/repo/alpine/@} }
+dl-cdn.alpinelinux.org/alpine/.*
 ```
+
+All privoxy's rules are available in conf/privoxy/user.action
+
+### How to add new rules to privoxy
+
+to be described later
+
 
 ### DarkHTTPD
 
