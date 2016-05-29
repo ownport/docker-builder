@@ -4,7 +4,7 @@
 #	Build
 #
 
-create-docker-builder:
+create-docker-builder-latest:
 	docker build -t 'ownport/docker-builder:latest' \
 		--no-cache \
 		.
