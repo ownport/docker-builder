@@ -7,7 +7,7 @@ echo "[INFO] Installation of Docker Builder"
 
 install_apps() {
 
-    echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+    echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk add --update runit privoxy darkhttpd && \
     rm -rf \
         /var/cache/apk/* \
