@@ -1,10 +1,10 @@
-# Docker Builder
+# Docker Local repositories
 
 [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/ownport/docker-builder/)
 [![](https://badge.imagelayers.io/ownport/docker-builder:latest.svg)](https://imagelayers.io/?images=ownport/docker-builder:latest)
 
-Simple and small Docker image with HTTP server and forwarding proxy. Used as static cache for installation scripts and artifacts during Docker images creation
-
+Simple and small Docker image with HTTP server and forwarding proxy.
+Using as local repositories for installation scripts and artifacts during Docker images creation
 
 ## Components
 
@@ -37,21 +37,19 @@ Host directory is /var/www
 
 ## Examples
 
-To run docker-builder 
+To run docker-local-repos
 
 ```sh
-$ docker run -d --name 'docker-builder' \
-	-h docker-builder \
+$ docker run -d --name 'docker-local-repos' \
+	-h docker-local-repos \
 	-v $(shell pwd):/var/www \
-	ownport/docker-builder:latest
+	ownport/docker-local-repos:latest
 ```
 
-to use docker-builder as forwaring proxy, please specify the HTTP_PROXY environment variable
+to use docker-local-repos with forwarding proxy option, please specify the HTTP_PROXY environment variable
 
 ```sh
-$ HTTP_PROXY=http://<docker-builder-host>:8118/
+$ HTTP_PROXY=http://<docker-local-repos-host>:8118/
 ```
 
 HTTPS proxy is not supported
-
-
