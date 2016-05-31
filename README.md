@@ -1,7 +1,7 @@
 # Docker Local repositories
 
-[![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/ownport/docker-builder/)
-[![](https://badge.imagelayers.io/ownport/docker-builder:latest.svg)](https://imagelayers.io/?images=ownport/docker-builder:latest)
+[![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/ownport/docker-local-repos/)
+[![](https://badge.imagelayers.io/ownport/docker-builder:latest.svg)](https://imagelayers.io/?images=ownport/docker-local-repos:latest)
 
 Simple and small Docker image with HTTP server and forwarding proxy.
 Using as local repositories for installation scripts and artifacts during Docker images creation
