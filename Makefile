@@ -4,13 +4,13 @@
 #	Build
 #
 
-create-docker-builder-latest:
-	docker build -t 'ownport/docker-builder:latest' \
+create-docker-local-repos-latest:
+	docker build -t 'ownport/docker-local-repos:latest' \
 		--no-cache \
 		.
 
-create-docker-builder-1.0.0:
-	docker build -t 'ownport/docker-builder:1.0.0' \
+create-docker-local-repos-1.0.0:
+	docker build -t 'ownport/docker-local-repos:1.0.0' \
 		--no-cache \
 		.
 
@@ -19,8 +19,8 @@ create-docker-builder-1.0.0:
 #	Run
 #
 
-run-docker-builder:
-	docker run -d --name 'docker-builder' \
-		-h docker-builder \
+run-docker-local-repos:
+	docker run -d --name 'docker-local-repos' \
+		-h docker-local-repos \
 		-v $(shell pwd):/var/www \
-		ownport/docker-builder:latest
+		ownport/docker-local-repos:latest

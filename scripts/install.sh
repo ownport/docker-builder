@@ -3,7 +3,7 @@
 set -eo pipefail
 [[ "$TRACE" ]] && set -x || :
 
-echo "[INFO] Installation of Docker Builder"
+echo "[INFO] Installation of Docker Local Repositories"
 
 install_apps() {
 
@@ -16,12 +16,11 @@ install_apps() {
         /etc/init.d/darkhttpd
 }
 
-
 #
 #   runit
 #
 config_runit() {
-    
+
     #
     #   svlogd (runit)
     #
@@ -48,7 +47,7 @@ config_privoxy() {
 
     mkdir -p /etc/service/privoxy/ && \
     printf "#!/bin/sh\nset -e\nexec /usr/sbin/privoxy --no-daemon /etc/privoxy/config" > /etc/service/privoxy/run && \
-    chmod +x /etc/service/privoxy/run && 
+    chmod +x /etc/service/privoxy/run &&
     echo "[INFO] runit support for privoxy was activated"
 }
 
@@ -68,13 +67,11 @@ config_darkhttpd() {
 }
 
 #
-#   clean 
+#   clean
 #
 config_apps() {
-    
+
     config_runit && config_darkhttpd && config_privoxy
 }
 
 $@
-
-
