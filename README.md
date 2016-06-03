@@ -19,7 +19,7 @@ Using as local repositories for installation scripts and artifacts during Docker
 Rules
 
 ```
-{ +redirect{s@http://dl-cdn.alpinelinux.org/alpine/@http://docker-local-repos/files/alpine/@} }
+{ +redirect{s@http://dl-cdn.alpinelinux.org/alpine/@http://docker-local-repos/repo/alpine/@} }
 dl-cdn.alpinelinux.org/alpine/.*
 ```
 
