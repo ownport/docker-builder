@@ -9,8 +9,8 @@ create-docker-local-repos-latest:
 		--no-cache \
 		.
 
-create-docker-local-repos-1.0.0:
-	docker build -t 'ownport/docker-local-repos:1.0.0' \
+create-docker-local-repos-1.0.1:
+	docker build -t 'ownport/docker-local-repos:1.0.1' \
 		--no-cache \
 		.
 
