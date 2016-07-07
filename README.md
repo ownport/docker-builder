@@ -34,19 +34,29 @@ to be described later
 
 Host directory is /var/www
 
+## Prerequisites
+
+Check that user defined Docker network is created
+```sh
+$ docker network create docker.env
+0bfd31093dbd68a34d0509328c5d6e3714682a3a6a0127ec293aad2a8da4b480
+```
+
 
 ## Examples
 
 To run docker-local-repos
 
 ```sh
-$ docker run -d --name 'docker-local-repos' \
-	-h docker-local-repos \
+$ docker run -d \
+	--net 'docker.env' \
+	--name 'local-repos' \
+	--hostname local-repos \
 	-v $(shell pwd):/var/www \
 	ownport/docker-local-repos:latest
 ```
 
-to use docker-local-repos with forwarding proxy option, please specify the HTTP_PROXY environment variable
+to use local-repos with forwarding proxy option, please specify the HTTP_PROXY environment variable
 
 ```sh
 $ HTTP_PROXY=http://<docker-local-repos-host>:8118/
