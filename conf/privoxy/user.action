@@ -1,20 +1,20 @@
-{ +redirect{s@http://dl-cdn.alpinelinux.org/alpine/@http://local-repos/repo/alpine/@} }
+{ +redirect{s@http://dl-cdn.alpinelinux.org/alpine/@http://DOCKER-LOCAL-REPOS/repo/alpine/@} }
 dl-cdn.alpinelinux.org/.*
 
-{ +redirect{s@http://dl-2.alpinelinux.org/alpine/@http://local-repos/repo/alpine/@} }
+{ +redirect{s@http://dl-2.alpinelinux.org/alpine/@http://DOCKER-LOCAL-REPOS/repo/alpine/@} }
 dl-2.alpinelinux.org/.*
 
-{ +redirect{s@http://dl-3.alpinelinux.org/alpine/@http://local-repos/repo/alpine/@} }
+{ +redirect{s@http://dl-3.alpinelinux.org/alpine/@http://DOCKER-LOCAL-REPOS/repo/alpine/@} }
 dl-3.alpinelinux.org/.*
 
-{ +redirect{s@http://dl-4.alpinelinux.org/alpine/@http://local-repos/repo/alpine/@} }
+{ +redirect{s@http://dl-4.alpinelinux.org/alpine/@http://DOCKER-LOCAL-REPOS/repo/alpine/@} }
 dl-4.alpinelinux.org/.*
 
-{ +redirect{s@http://dl-5.alpinelinux.org/alpine/@http://local-repos/repo/alpine/@} }
+{ +redirect{s@http://dl-5.alpinelinux.org/alpine/@http://DOCKER-LOCAL-REPOS/repo/alpine/@} }
 dl-5.alpinelinux.org/.*
 
-{ +redirect{s@http://dl-6.alpinelinux.org/alpine/@http://local-repos/repo/alpine/@} }
+{ +redirect{s@http://dl-6.alpinelinux.org/alpine/@http://DOCKER-LOCAL-REPOS/repo/alpine/@} }
 dl-6.alpinelinux.org/.*
 
-{ +redirect{s@http://dl-8.alpinelinux.org/alpine/@http://local-repos/repo/alpine/@} }
+{ +redirect{s@http://dl-8.alpinelinux.org/alpine/@http://DOCKER-LOCAL-REPOS/repo/alpine/@} }
 dl-8.alpinelinux.org/.*
