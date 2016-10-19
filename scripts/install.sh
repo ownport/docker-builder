@@ -7,7 +7,8 @@ echo "[INFO] Installation of Docker Local Repositories"
 
 install_apps() {
 
-    echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+    echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories &&
+    echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories &&\
     apk add --update runit privoxy darkhttpd && \
     rm -rf \
         /var/cache/apk/* \
@@ -42,11 +43,12 @@ config_runit() {
 #
 config_privoxy() {
 
+    mv /etc/privoxy-local-repos/* /etc/privoxy/ && \
+    rm -rf /etc/privoxy-local-repos/
+
     sed -i "s/:1000:/:65535:/" /etc/group /etc/passwd && \
     chown root:root /etc/privoxy /var/log/privoxy && \
-
     mkdir -p /etc/service/privoxy/ && \
-    printf "#!/bin/sh\nset -e\nexec /usr/sbin/privoxy --no-daemon /etc/privoxy/config" > /etc/service/privoxy/run && \
     chmod +x /etc/service/privoxy/run &&
     echo "[INFO] runit support for privoxy was activated"
 }
