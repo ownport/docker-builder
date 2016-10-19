@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+get_ip_address() {
+    ip addr | awk -F '[ /]+' '/global/ {print $3}'
+}
+
+sed -i "s/DOCKER-LOCAL-REPOS/$(get_ip_address)/g" /etc/privoxy/user.action && \
+exec /usr/sbin/privoxy --no-daemon /etc/privoxy/config
