@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.4
 
 COPY ./conf/privoxy /etc/privoxy-local-repos/
 COPY ./scripts/privoxy.run /etc/service/privoxy/run

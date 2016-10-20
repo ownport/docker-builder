@@ -3,14 +3,10 @@
 #
 #	Build
 #
+DOCKER_LOCAL_REPOS_VERSION ?= 1.0.4
 
-create-docker-local-repos-latest:
-	docker build -t 'ownport/docker-local-repos:latest' \
-		--no-cache \
-		.
-
-create-docker-local-repos-1.0.3:
-	docker build -t 'ownport/docker-local-repos:1.0.3' \
+create-docker-local-repos-${DOCKER_LOCAL_REPOS_VERSION}:
+	docker build -t 'ownport/docker-local-repos:${DOCKER_LOCAL_REPOS_VERSION}' \
 		--no-cache \
 		.
 
@@ -23,4 +19,4 @@ run-docker-local-repos:
 	docker run -d --name 'docker-local-repos' \
 		-h docker-local-repos \
 		-v $(shell pwd):/var/www \
-		ownport/docker-local-repos:latest
+		ownport/docker-local-repos:${DOCKER_LOCAL_REPOS_VERSION}
